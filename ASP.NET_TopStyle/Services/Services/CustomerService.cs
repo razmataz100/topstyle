@@ -51,7 +51,7 @@ namespace ASP.NET_TopStyle.Services.Services
             currentCustomer.Username = customer.Username;
             currentCustomer.Password = customer.Password;
 
-            _customerRepo.UpdateCustomerAsync(currentCustomer);
+            await _customerRepo.UpdateCustomerAsync(currentCustomer);
             return true;
         }
     }

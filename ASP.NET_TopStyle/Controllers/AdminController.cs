@@ -24,11 +24,6 @@ namespace ASP.NET_TopStyle.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> AdminLogin(LoginDTO loginDTO)
         {
-            if (loginDTO == null)
-            {
-                return BadRequest("Invalid admin data.");
-            }
-
             var token = await _loginService.LoginAsync(loginDTO);
 
             if (token == null)
