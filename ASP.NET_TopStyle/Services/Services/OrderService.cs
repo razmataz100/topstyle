@@ -48,8 +48,6 @@ namespace ASP.NET_TopStyle.Services.Services
                 return false;
             }
 
-            try
-            {
                 var order = new Order
                 {
                     Customer = customer,
@@ -75,12 +73,6 @@ namespace ASP.NET_TopStyle.Services.Services
 
                 await _orderRepo.PlaceOrderAsync(order);
                 return true;
-            }
-
-            catch
-            {
-                return false;
-            }
         }
     }
 }

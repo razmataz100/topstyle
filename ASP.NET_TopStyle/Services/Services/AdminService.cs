@@ -32,15 +32,9 @@ namespace ASP.NET_TopStyle.Services.Services
                 Category = category
 
             };
-            try
-            {
-                await _productRepo.AddProductAsync(product);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
+
+            await _productRepo.AddProductAsync(product);
+            return true;
         }
     }
 }

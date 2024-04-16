@@ -44,7 +44,6 @@ namespace ASP.NET_TopStyle.Controllers
 
             var currentCustomerId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
 
-
             if (currentCustomerId != customerId)
             {
                 return Unauthorized("Can only delete your own account.");
@@ -85,10 +84,6 @@ namespace ASP.NET_TopStyle.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> CustomerLogin(LoginDTO loginDTO)
         {
-            if (loginDTO == null)
-            {
-                return BadRequest("Invalid admin data.");
-            }
 
             var token = await _loginService.LoginAsync(loginDTO);
 
