@@ -29,5 +29,16 @@ namespace ASP.NET_TopStyle.Repository.repo
         {
             return await _context.Products.FindAsync(productId);
         }
+
+        public async Task<List<Product>> SearchProductsAsync(string searchTerm)
+        {
+            return await _context.Products
+                                 .Include(p => p.Category)
+                                 .Where(p => p.Name.Contains(searchTerm) ||
+                                             p.Description.Contains(searchTerm) ||
+                                             p.Category.CategoryName.Contains(searchTerm))
+                                 .ToListAsync();
+        }
     }
 }
+

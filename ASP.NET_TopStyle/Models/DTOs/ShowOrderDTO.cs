@@ -8,6 +8,6 @@ namespace ASP.NET_TopStyle.Models.DTOs
         public DateTime OrderDate { get; set; }
         public string CustomerUsername { get; set; }
         public double TotalPrice { get; set; }
-        public List<ShowProductDTO> Products { get; set; }
+        public List<ShowProductInOrderDTO> Products { get; set; }
     }
 }

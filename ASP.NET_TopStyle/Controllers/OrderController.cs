@@ -50,11 +50,7 @@ namespace ASP.NET_TopStyle.Controllers
                 return NotFound("You do not have any earlier orders");
             }
 
-            return Ok(orders);
-
-  
-
-            
+            return Ok(orders);        
         }
     }
 }

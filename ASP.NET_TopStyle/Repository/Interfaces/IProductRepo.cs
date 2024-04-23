@@ -7,5 +7,6 @@ namespace ASP.NET_TopStyle.Repository.Interfaces
         Task AddProductAsync(Product product);
         Task<Category> GetCategoryByIdAsync(int categoryId);
         Task<Product> GetProductByIdAsync(int productId);
+        Task<List<Product>> SearchProductsAsync(string searchTerm);
     }
 }

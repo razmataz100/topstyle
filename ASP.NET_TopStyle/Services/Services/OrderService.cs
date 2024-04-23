@@ -28,7 +28,7 @@ namespace ASP.NET_TopStyle.Services.Services
                 OrderDate = order.OrderDate,
                 CustomerUsername = order.Customer.Username,
                 TotalPrice = order.TotalPrice,
-                Products = order.OrderProducts.Select(op => new ShowProductDTO
+                Products = order.OrderProducts.Select(op => new ShowProductInOrderDTO
                 {
                     ProductId = op.Product.ProductId,
                     Name = op.Product.Name,
